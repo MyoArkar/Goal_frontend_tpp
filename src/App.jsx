@@ -36,7 +36,7 @@ const App = () => {
             <Route
               path="/*"
               element={
-                //<ProtectedRoute>
+                <ProtectedRoute>
                   <MainLayout>
                     <Routes>
                       <Route path="/dashboard" element={<Dashboard />} />
@@ -50,7 +50,7 @@ const App = () => {
                     
                     </Routes>
                   </MainLayout>
-                //</ProtectedRoute>
+                </ProtectedRoute>
               }
             />
           </Routes>
