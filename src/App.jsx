@@ -7,11 +7,13 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Goals from './pages/Goals/Goals';
+import CreateGoal from './pages/Goals/CreateGoal';
 import Milestones from './pages/Milestones/Milestones';
 import Tasks from './pages/Tasks/Tasks';
 import Achievements from './pages/Achievements/Achievements';
 import Progress from './pages/Progress/Progress';
 import { useAuth } from './contexts/AuthContext';
+
 
 const ProtectedRoute = ({ children }) => {
   const { isAuthenticated } = useAuth();
@@ -34,19 +36,21 @@ const App = () => {
             <Route
               path="/*"
               element={
-                <ProtectedRoute>
+                //<ProtectedRoute>
                   <MainLayout>
                     <Routes>
                       <Route path="/dashboard" element={<Dashboard />} />
-                      <Route path="/goals" element={<Goals />} />
+                    <Route path="/goals" element={<Goals />} />
+                    <Route path="/create-goal" element={<CreateGoal />} />
                       <Route path="/milestones" element={<Milestones />} />
                       <Route path="/tasks" element={<Tasks />} />
                       <Route path="/achievements" element={<Achievements />} />
                       <Route path="/progress" element={<Progress />} />
-                      <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                    <Route path="/" element={<Navigate to="/dashboard" replace />} />
+                    
                     </Routes>
                   </MainLayout>
-                </ProtectedRoute>
+                //</ProtectedRoute>
               }
             />
           </Routes>

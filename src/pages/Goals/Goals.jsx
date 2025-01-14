@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { logger } from '../../utils/logger';
 import { useTheme } from '../../contexts/ThemeContext';
+import { useNavigate } from 'react-router-dom';
 
 const Goals = () => {
   logger.debug('Rendering Goals page');
@@ -9,6 +10,10 @@ const Goals = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedGoal, setSelectedGoal] = useState(null);
 
+  const navigate = useNavigate();
+  const handleAddGoalClick = () => {
+    navigate('/create-goal'); // Navigate to the Create Goal page
+  };
   // Sample goals data - replace with actual data from your backend
   const goals = [
     {
@@ -187,6 +192,7 @@ const Goals = () => {
           ${darkMode 
             ? 'bg-info-dark hover:bg-info-light text-dark-text-primary' 
             : 'text-white bg-info-light hover:bg-info-dark'}`}
+          onClick={handleAddGoalClick}
         >
           Add New Goal
         </button>
