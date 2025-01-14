@@ -1,17 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-<<<<<<< HEAD
-import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../contexts/AuthContext';
-import { useTheme } from '../contexts/ThemeContext';
-import { logger } from '../utils/logger';
-import { Link } from 'react-router-dom';
-=======
 import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import { useTheme } from '../contexts/ThemeContext';
 import { logger } from '../utils/logger';
->>>>>>> my_feature_branch
 
 const Sidebar = ({ isSidebarCollapsed }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,10 +11,7 @@ const Sidebar = ({ isSidebarCollapsed }) => {
   const { user, logout } = useAuth();
   const { darkMode } = useTheme();
   const navigate = useNavigate();
-<<<<<<< HEAD
-=======
   const location = useLocation();
->>>>>>> my_feature_branch
   
   logger.debug('Rendering Sidebar');
 
@@ -52,15 +41,6 @@ const Sidebar = ({ isSidebarCollapsed }) => {
     }
   };
 
-<<<<<<< HEAD
-  const linkBaseClasses = `flex items-center p-2 space-x-2 rounded-md transition-colors duration-200 
-    ${darkMode 
-      ? 'text-gray-300 hover:bg-gray-700 hover:text-white' 
-      : 'text-gray-800 hover:bg-gray-200'
-    }`;
-
-  const headerClasses = `px-2 text-xs font-semibold tracking-wider uppercase 
-=======
   const isActive = (path) => location.pathname === path;
 
   const getLinkClasses = (path) => {
@@ -76,33 +56,21 @@ const Sidebar = ({ isSidebarCollapsed }) => {
   };
 
   const headerClasses = `px-2 text-xs font-semibold tracking-wider uppercase mb-2
->>>>>>> my_feature_branch
     ${darkMode ? 'text-gray-400' : 'text-gray-600'}`;
 
   return (
     <aside
-<<<<<<< HEAD
-      className={`shadow-lg transition-all duration-300 ease-in-out flex-shrink-0 
-=======
       className={`shadow-lg transition-all duration-300 ease-in-out flex-shrink-0 sticky top-16 h-[calc(100vh-4rem)]
->>>>>>> my_feature_branch
         ${darkMode ? 'bg-gray-800 text-gray-100' : 'bg-white text-gray-800'}
         ${isSidebarCollapsed ? 'w-0' : 'w-64'}
       `}
     >
       <nav className={`flex flex-col h-full ${isSidebarCollapsed ? 'hidden' : 'block'}`}>
         {/* Navigation Links */}
-<<<<<<< HEAD
-        <div className="flex-1 p-4 space-y-4">
-          {/* Overview Section */}
-          <div>
-            <Link to="/dashboard" className={linkBaseClasses}>
-=======
         <div className="flex-1 p-4 space-y-6">
           {/* Overview Section */}
           <div>
             <Link to="/dashboard" className={getLinkClasses('/dashboard')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
               </svg>
@@ -111,15 +79,9 @@ const Sidebar = ({ isSidebarCollapsed }) => {
           </div>
 
           {/* Goals Section */}
-<<<<<<< HEAD
-          <div className="space-y-1">
-            <h3 className={headerClasses}>Goals</h3>
-            <Link to="/goals" className={linkBaseClasses}>
-=======
           <div>
             <h3 className={headerClasses}>Goals</h3>
             <Link to="/goals" className={getLinkClasses('/goals')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
               </svg>
@@ -128,15 +90,9 @@ const Sidebar = ({ isSidebarCollapsed }) => {
           </div>
 
           {/* Milestones Section */}
-<<<<<<< HEAD
-          <div className="space-y-1">
-            <h3 className={headerClasses}>Milestones</h3>
-            <Link to="/milestones" className={linkBaseClasses}>
-=======
           <div>
             <h3 className={headerClasses}>Milestones</h3>
             <Link to="/milestones" className={getLinkClasses('/milestones')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
               </svg>
@@ -145,15 +101,9 @@ const Sidebar = ({ isSidebarCollapsed }) => {
           </div>
 
           {/* Tasks Section */}
-<<<<<<< HEAD
-          <div className="space-y-1">
-            <h3 className={headerClasses}>Tasks</h3>
-            <Link to="/tasks" className={linkBaseClasses}>
-=======
           <div>
             <h3 className={headerClasses}>Tasks</h3>
             <Link to="/tasks" className={getLinkClasses('/tasks')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
               </svg>
@@ -161,27 +111,16 @@ const Sidebar = ({ isSidebarCollapsed }) => {
             </Link>
           </div>
 
-<<<<<<< HEAD
-          {/* Achievements Section */}
-          <div className="space-y-1">
-            <h3 className={headerClasses}>Progress</h3>
-            <Link to="/achievements" className={linkBaseClasses}>
-=======
           {/* Progress Section */}
           <div>
             <h3 className={headerClasses}>Progress</h3>
             <Link to="/achievements" className={getLinkClasses('/achievements')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
               </svg>
               <span>Achievements</span>
             </Link>
-<<<<<<< HEAD
-            <Link to="/progress" className={linkBaseClasses}>
-=======
             <Link to="/progress" className={getLinkClasses('/progress')}>
->>>>>>> my_feature_branch
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
               </svg>
