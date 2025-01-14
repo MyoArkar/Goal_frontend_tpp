@@ -9,7 +9,11 @@ const Header = ({ toggleSidebar, isSidebarCollapsed }) => {
 
   return (
     <header 
+<<<<<<< HEAD
       className={`shadow-md z-10 transition-colors duration-theme
+=======
+      className={`shadow-md z-20 sticky top-0 transition-colors duration-theme
+>>>>>>> my_feature_branch
         ${darkMode ? 'border-b bg-dark-bg-secondary border-dark-border' : 'bg-accent-light'}
       `}
     >
