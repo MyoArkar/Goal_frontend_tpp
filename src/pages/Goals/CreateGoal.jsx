@@ -19,7 +19,7 @@ function CreateGoalForm() {
   // Handle form submission
   const handleSubmit = async (event) => {
     event.preventDefault();
-    setUser('hello');
+    
     const formData = {
       user_id,
       title,
