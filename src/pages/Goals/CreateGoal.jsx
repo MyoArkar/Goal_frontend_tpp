@@ -34,7 +34,7 @@ function CreateGoalForm() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Accept': 'application/json',,
+          'Accept': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
         body: JSON.stringify(formData), // Send the form data as JSON
